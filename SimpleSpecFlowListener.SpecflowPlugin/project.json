@@ -1,0 +1,13 @@
+﻿{
+  "dependencies": {
+      "log4net": "2.0.5",
+    "SpecFlow": "2.3.2",
+    "SpecFlow.CustomPlugin": "2.3.2"
+  },
+  "frameworks": {
+    "net452": {}
+  },
+  "runtimes": {
+    "win": {}
+  }
+}

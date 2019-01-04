@@ -1,0 +1,15 @@
+D:\UAB\projectodegrado\Simple_Listener\SimpleSpecFlowListener.SpecflowPlugin\bin\Debug\SimpleSpecFlowListener.SpecflowPlugin.dll
+D:\UAB\projectodegrado\Simple_Listener\SimpleSpecFlowListener.SpecflowPlugin\bin\Debug\SimpleSpecFlowListener.SpecflowPlugin.pdb
+D:\UAB\projectodegrado\Simple_Listener\SimpleSpecFlowListener.SpecflowPlugin\bin\Debug\Newtonsoft.Json.dll
+D:\UAB\projectodegrado\Simple_Listener\SimpleSpecFlowListener.SpecflowPlugin\bin\Debug\TechTalk.SpecFlow.dll
+D:\UAB\projectodegrado\Simple_Listener\SimpleSpecFlowListener.SpecflowPlugin\bin\Debug\Gherkin.dll
+D:\UAB\projectodegrado\Simple_Listener\SimpleSpecFlowListener.SpecflowPlugin\bin\Debug\TechTalk.SpecFlow.Generator.dll
+D:\UAB\projectodegrado\Simple_Listener\SimpleSpecFlowListener.SpecflowPlugin\bin\Debug\TechTalk.SpecFlow.Parser.dll
+D:\UAB\projectodegrado\Simple_Listener\SimpleSpecFlowListener.SpecflowPlugin\bin\Debug\TechTalk.SpecFlow.Utils.dll
+D:\UAB\projectodegrado\Simple_Listener\SimpleSpecFlowListener.SpecflowPlugin\bin\Debug\System.ValueTuple.dll
+D:\UAB\projectodegrado\Simple_Listener\SimpleSpecFlowListener.SpecflowPlugin\obj\Debug\SimpleSpecFlowListener.SpecflowPlugin.csproj.CoreCompileInputs.cache
+D:\UAB\projectodegrado\Simple_Listener\SimpleSpecFlowListener.SpecflowPlugin\obj\Debug\SimpleSpecFlowListener.SpecflowPlugin.csproj.CopyComplete
+D:\UAB\projectodegrado\Simple_Listener\SimpleSpecFlowListener.SpecflowPlugin\obj\Debug\SimpleSpecFlowListener.SpecflowPlugin.dll
+D:\UAB\projectodegrado\Simple_Listener\SimpleSpecFlowListener.SpecflowPlugin\obj\Debug\SimpleSpecFlowListener.SpecflowPlugin.pdb
+D:\UAB\projectodegrado\Simple_Listener\SimpleSpecFlowListener.SpecflowPlugin\obj\Debug\SimpleSpecFlowListener.SpecflowPlugin.csprojAssemblyReference.cache
+D:\UAB\projectodegrado\Simple_Listener\SimpleSpecFlowListener.SpecflowPlugin\bin\Debug\log4net.dll

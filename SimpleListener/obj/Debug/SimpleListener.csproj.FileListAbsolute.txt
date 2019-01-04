@@ -1,0 +1,16 @@
+D:\UAB\projectodegrado\Simple_Listener\SimpleListener\obj\Debug\SimpleListener.csproj.CoreCompileInputs.cache
+D:\UAB\projectodegrado\Simple_Listener\SimpleListener\bin\Debug\SimpleListener.dll
+D:\UAB\projectodegrado\Simple_Listener\SimpleListener\bin\Debug\SimpleListener.pdb
+D:\UAB\projectodegrado\Simple_Listener\SimpleListener\bin\Debug\log4net.dll
+D:\UAB\projectodegrado\Simple_Listener\SimpleListener\bin\Debug\Newtonsoft.Json.dll
+D:\UAB\projectodegrado\Simple_Listener\SimpleListener\bin\Debug\Newtonsoft.Json.pdb
+D:\UAB\projectodegrado\Simple_Listener\SimpleListener\bin\Debug\Mono.Cecil.dll
+D:\UAB\projectodegrado\Simple_Listener\SimpleListener\bin\Debug\nunit-agent-x86.exe
+D:\UAB\projectodegrado\Simple_Listener\SimpleListener\bin\Debug\nunit-agent.exe
+D:\UAB\projectodegrado\Simple_Listener\SimpleListener\bin\Debug\nunit.engine.api.dll
+D:\UAB\projectodegrado\Simple_Listener\SimpleListener\bin\Debug\nunit.engine.dll
+D:\UAB\projectodegrado\Simple_Listener\SimpleListener\bin\Debug\RestSharp.dll
+D:\UAB\projectodegrado\Simple_Listener\SimpleListener\obj\Debug\SimpleListener.csproj.CopyComplete
+D:\UAB\projectodegrado\Simple_Listener\SimpleListener\obj\Debug\SimpleListener.dll
+D:\UAB\projectodegrado\Simple_Listener\SimpleListener\obj\Debug\SimpleListener.pdb
+D:\UAB\projectodegrado\Simple_Listener\SimpleListener\obj\Debug\SimpleListener.csprojAssemblyReference.cache

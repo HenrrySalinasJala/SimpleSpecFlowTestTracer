@@ -1,0 +1,21 @@
+﻿{
+  "fullName": "test.assembly1.feature.test1",
+  "title": "test title",
+  "duration": "500",
+  "stack": "Exception",
+  "result": "passed",
+  "screenshot": "base64;djdunu9askmkm01askckjnk",
+  "video": "C:\\test\\test.mp4",
+  "steps": [{
+    "keyword": "Given",
+    "text": "I send a request test",
+    "arguments": null,
+    "state": "Passed",
+    "duration": "0,5"
+}],
+  "tags": [
+    "All",
+    "tag1",
+    "tag2"
+  ]
+}

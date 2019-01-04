@@ -1,0 +1,15 @@
+﻿{
+  "testRunner": "nunit",
+  "dependencies": {
+    "log4net": "2.0.5",
+    "Newtonsoft.Json": "12.0.1",
+    "NUnit.Engine": "3.9.0",
+    "RestSharp": "106.5.4"
+  },
+  "frameworks": {
+    "net452": {}
+  },
+  "runtimes": {
+    "win": {}
+  }
+}
