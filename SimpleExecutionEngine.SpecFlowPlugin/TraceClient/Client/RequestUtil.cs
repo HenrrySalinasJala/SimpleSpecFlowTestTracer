@@ -114,7 +114,7 @@
         /// <param name="token">Request's header set as Authorization-Token</param>
         /// <returns>Returns a new instance of the <see cref="Response"/> class with proper
         /// values or Request done.</returns>
-        public static Response Put(string endPoint, string jsonBody, string token)
+        public static Response Put(string endPoint, string jsonBody, string token = null)
         {
             return SendRequest(Method.PUT, endPoint, token, jsonBody);
         }

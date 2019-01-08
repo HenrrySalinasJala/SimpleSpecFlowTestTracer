@@ -59,6 +59,7 @@
             var fullName = TestContext.CurrentContext.Test.FullName;
             return SetFullName(fullName);
         }
+
         public ITestBuilderPlan SetFullName(string fullName)
         {
             if (string.IsNullOrEmpty(FullName))
@@ -92,6 +93,7 @@
             Suite = null;
             SuiteDescription = null;
         }
+
         public ITestBuilderPlan SetTitle(string title)
         {
             if (string.IsNullOrEmpty(Title))
@@ -132,6 +134,7 @@
             SetErrorMessage(message);
             SetStackTrace(stackTrace);
             SetDuration(Convert.ToString(duration.TotalSeconds));
+            UpdateTest();
             return this;
         }
 
@@ -141,7 +144,7 @@
             SetTitle(scenarioTitle);
             allTags.ToList()
                 .ForEach(tag => AddTag(tag));
-            RequestUtil.Post("/api/Tests",Build().ToString());
+            CreateTest();
             return this;
         }
 
@@ -264,6 +267,7 @@
                 step.MultilineText = multilineTextArg;
                 step.Table = tableArg != null ? ToArray(tableArg) : null;
                 Steps.Add(step);
+                UpdateTest();
             }
 
             return this;
@@ -345,6 +349,30 @@
         public bool contains(string tagToFind)
         {
             return Tags.Any(tag => tag.Equals(tagToFind, StringComparison.InvariantCultureIgnoreCase));
+        }
+
+        private void UpdateTest()
+        {
+            try
+            {
+                RequestUtil.Put($"/api/Tests/{TestId}", Build().ToString());
+            }
+            catch (Exception error)
+            {
+                log.Fatal($"Unable to update test from client {error.Message}");
+            }
+        }
+
+        private void CreateTest()
+        {
+            try
+            {
+                RequestUtil.Post("/api/Tests", Build().ToString());
+            }
+            catch (Exception error)
+            {
+                log.Fatal($"Unable to create test from client {error.Message}");
+            }
         }
     }
 }
