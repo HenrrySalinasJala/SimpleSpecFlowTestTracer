@@ -2,10 +2,10 @@
 namespace SimpleTracer.SpecFlowPlugin.Test
 {
     using NUnit.Framework;
+    using SimpleExecutionEngine.SpecFlowPlugin.TraceClient;
     using System;
     using System.Collections.Generic;
     using TechTalk.SpecFlow.Bindings;
-    using TraceClient;
 
     [TestFixture]
     public class TestScenarioBuilderTest : BaseTest
@@ -19,7 +19,7 @@ namespace SimpleTracer.SpecFlowPlugin.Test
         [Test]
         public void Test_TestScenarioBuilder_ShouldBePossibleToBuildAnScenarioWithFullNameOnly()
         {
-            TestScenarioBuilder scenarioBuilder = new TestScenarioBuilder();
+            NUnitTestBuilder scenarioBuilder = new NUnitTestBuilder();
             const string expectedFullName = "test.assembly1.feature.test1";
             scenarioBuilder.SetFullName(expectedFullName);
             scenarioBuilder.SetFullName("fullName2");
@@ -31,7 +31,7 @@ namespace SimpleTracer.SpecFlowPlugin.Test
         [Test]
         public void Test_TestScenarioBuilder_ShouldBePossibleToBuildAnScenarioWithFullValues()
         {
-            TestScenarioBuilder scenarioBuilder = new TestScenarioBuilder();
+            NUnitTestBuilder scenarioBuilder = new NUnitTestBuilder();
             const string expectedFullName = "test.assembly1.feature.test1";
             const string expectedTitle = "test title";
             const string expectedDuration = "500";
@@ -62,11 +62,11 @@ namespace SimpleTracer.SpecFlowPlugin.Test
         [Test]
         public void Test_TestScenarioBuilder_ShouldBePossibleToSetScenarioResult()
         {
-            TestScenarioBuilder scenarioBuilder = new TestScenarioBuilder();
+            NUnitTestBuilder scenarioBuilder = new NUnitTestBuilder();
             const string expectedResult = "Passed";
             scenarioBuilder.SetResult(expectedResult);
             const string expectedStepText = "step one 'parameter'";
-            scenarioBuilder.SetStep(expectedStepText);
+            scenarioBuilder.SetStep("Given",expectedStepText);
             scenarioBuilder.SetStepState("done");
             var scenario = scenarioBuilder.Build();
 
@@ -76,7 +76,7 @@ namespace SimpleTracer.SpecFlowPlugin.Test
         [Test]
         public void Test_TestScenarioBuilder_ShouldBePossibleToBuildAJSONPayload()
         {
-            TestScenarioBuilder scenarioBuilder = new TestScenarioBuilder();
+            NUnitTestBuilder scenarioBuilder = new NUnitTestBuilder();
             const string expectedFullName = "test.assembly1.feature.test1";
             const string expectedTitle = "test title";
             const string expectedDuration = "500";
@@ -104,7 +104,7 @@ namespace SimpleTracer.SpecFlowPlugin.Test
         [Test]
         public void Test_TestScenarioBuilder_ShouldBePossibleToBuildAJSONPayloadWithSteps()
         {
-            TestScenarioBuilder scenarioBuilder = new TestScenarioBuilder();
+            NUnitTestBuilder scenarioBuilder = new NUnitTestBuilder();
             const string expectedFullName = "test.assembly1.feature.test1";
             const string expectedTitle = "test title";
             const string expectedDuration = "500";

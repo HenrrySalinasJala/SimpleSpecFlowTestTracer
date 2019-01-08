@@ -57,9 +57,9 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SimpleTracer.SpecflowPlugin\SimpleTracer.SpecflowPlugin.csproj">
-      <Project>{8D430EA5-FF92-4947-A008-70A9B487E706}</Project>
-      <Name>SimpleTracer.SpecflowPlugin</Name>
+    <ProjectReference Include="..\SimpleExecutionEngine.SpecFlowPlugin\SimpleExecutionEngine.SpecFlowPlugin.csproj">
+      <Project>{69708989-EC5B-4D22-8770-32F3033D21AE}</Project>
+      <Name>SimpleExecutionEngine.SpecFlowPlugin</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

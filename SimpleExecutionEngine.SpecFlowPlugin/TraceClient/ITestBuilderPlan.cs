@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleTracer.SpecFlowPlugin.TraceClient
+namespace SimpleExecutionEngine.SpecFlowPlugin.TraceClient
 {
     public interface ITestBuilderPlan
     {
-        ITestBuilderPlan SetFullName(string fullName);
+        ITestBuilderPlan SetFullName();
         ITestBuilderPlan SetTitle(string title);
         
     }

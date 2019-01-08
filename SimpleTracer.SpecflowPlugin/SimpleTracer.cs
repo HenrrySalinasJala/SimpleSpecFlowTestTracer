@@ -1,6 +1,6 @@
 ﻿namespace SimpleTracer.SpecFlowPlugin
 {
-    using global::SimpleTracer.SpecFlowPlugin.TraceClient;
+    using BoDi;
     using NUnit.Framework.Internal;
     using System;
     using System.Collections.Generic;
@@ -12,6 +12,8 @@
     using TechTalk.SpecFlow.Bindings;
     using TechTalk.SpecFlow.Bindings.Reflection;
     using TechTalk.SpecFlow.BindingSkeletons;
+    using TechTalk.SpecFlow.Infrastructure;
+    using TechTalk.SpecFlow.Plugins;
     using TechTalk.SpecFlow.Tracing;
 
     public class SimpleTracer : ITestTracer
@@ -20,7 +22,6 @@
         private readonly IStepFormatter stepFormatter;
         private readonly IStepDefinitionSkeletonProvider stepDefinitionSkeletonProvider;
         private readonly TechTalk.SpecFlow.Configuration.SpecFlowConfiguration specFlowConfiguration;
-        private readonly TestScenarioBuilder testScenarioBuilder;
 
         public SimpleTracer(ITraceListener traceListener, IStepFormatter stepFormatter,
             IStepDefinitionSkeletonProvider stepDefinitionSkeletonProvider,
@@ -30,8 +31,12 @@
             this.stepFormatter = stepFormatter;
             this.stepDefinitionSkeletonProvider = stepDefinitionSkeletonProvider;
             this.specFlowConfiguration = specFlowConfiguration;
-            testScenarioBuilder = new TestScenarioBuilder();
+           
         }
+        //public SimpleTracer(ScenarioContext scenarioContext)
+        //{
+        //    this.ScenarioContext = scenarioContext;
+        //}
 
         public void TraceBindingError(BindingException ex)
         {
@@ -60,13 +65,14 @@
         {
             Console.WriteLine("TraceStep");
             var testFullName = TestExecutionContext.CurrentContext.CurrentTest.FullName;
+           
 
-            testScenarioBuilder.SetFullName(testFullName)
-                               .SetTitle(stepInstance.StepContext.ScenarioTitle);
+            //testScenarioBuilder.SetFullName(testFullName)
+            //                   .SetTitle(stepInstance.StepContext.ScenarioTitle);
             var currentTags = stepInstance.StepContext.Tags;
-            currentTags.ToList().ForEach(t => testScenarioBuilder.AddTag(t));
+            //currentTags.ToList().ForEach(t => testScenarioBuilder.AddTag(t));
             string stepText = stepFormatter.GetStepText(stepInstance);
-            testScenarioBuilder.SetStep(stepInstance.Keyword, stepText);
+            //testScenarioBuilder.SetStep(stepInstance.Keyword, stepText);
 
             traceListener.WriteTestOutput(stepText.TrimEnd());
         }
@@ -74,8 +80,9 @@
         public void TraceStepDone(BindingMatch match, object[] arguments, TimeSpan duration)
         {
             Console.WriteLine("TraceStepDone");
-            testScenarioBuilder.SetStepState("Passed");
-            testScenarioBuilder.SetStepDuration(Convert.ToString(duration.TotalSeconds));
+            var testFullName = TestExecutionContext.CurrentContext.CurrentTest.FullName;
+            //testScenarioBuilder.SetStepState("Passed");
+            //testScenarioBuilder.SetStepDuration(Convert.ToString(duration.TotalSeconds));
 
             traceListener.WriteToolOutput("done: {0} ({1:F1}s)",
                             stepFormatter.GetMatchText(match, arguments), duration.TotalSeconds);
@@ -88,14 +95,14 @@
             var formattedSted = stepFormatter.GetMatchText(match, arguments);
             traceListener.WriteToolOutput("pending: {0}",
                             stepFormatter.GetMatchText(match, arguments));
-            testScenarioBuilder.SetStepState("Skipped");
+            //testScenarioBuilder.SetStepState("Skipped");
         }
 
         public void TraceStepSkipped()
         {
             Console.WriteLine("---------------TraceStepSkipped------------");
             traceListener.WriteToolOutput("skipped because of previous errors");
-            testScenarioBuilder.SetStepState("Skipped");
+            //testScenarioBuilder.SetStepState("Skipped");
             //Console.WriteLine("*******************************");
             //Console.WriteLine(testScenarioBuilder.Build().ToString());
             //Console.WriteLine("*******************************");
@@ -106,16 +113,12 @@
             Console.WriteLine("TraceWarning");
             traceListener.WriteToolOutput("warning: {0}", text);
             Console.WriteLine(text);
-            testScenarioBuilder.SetResult("Warning");
+            //testScenarioBuilder.SetResult("Warning");
         }
 
         public void TraceError(Exception ex)
         {
             Console.WriteLine("----------------TraceError----------------");
-            testScenarioBuilder.SetResult("Failed");
-            testScenarioBuilder.SetErrorMessage(ex.Message);
-            testScenarioBuilder.SetStackTrace(ex.StackTrace);
-
             //Console.WriteLine("*******************************");
             //Console.WriteLine(testScenarioBuilder.Build().ToString());
             //Console.WriteLine("*******************************");

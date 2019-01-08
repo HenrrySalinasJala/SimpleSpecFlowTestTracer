@@ -18,8 +18,9 @@ namespace SimpleListenerSpecFlow
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.3.2.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("SpecFlowFeature1")]
-    public partial class SpecFlowFeature1Feature
+    [NUnit.Framework.DescriptionAttribute("SpecFlowFeature1 a new feature")]
+    [NUnit.Framework.CategoryAttribute("NewFeature")]
+    public partial class SpecFlowFeature1ANewFeatureFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +32,8 @@ namespace SimpleListenerSpecFlow
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SpecFlowFeature1", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SpecFlowFeature1 a new feature", "As a user\r\nI want a new feature\r\nSo i can do new stuff", ProgrammingLanguage.CSharp, new string[] {
+                        "NewFeature"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -64,17 +66,60 @@ namespace SimpleListenerSpecFlow
         }
         
         [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("test 1 passed outline")]
+        [NUnit.Framework.CategoryAttribute("bvt")]
+        [NUnit.Framework.TestCaseAttribute("uno", "dos", "tres", null)]
+        [NUnit.Framework.TestCaseAttribute("uno 2", "dos 2", "tres 2", null)]
+        public virtual void Test1PassedOutline(string next1, string next2, string next3, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "bvt"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("test 1 passed outline", @__tags);
+#line 13
+this.ScenarioSetup(scenarioInfo);
+#line 15
+testRunner.Given(string.Format("Given step \'{0}\'", next1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 16
+testRunner.When(string.Format("When step \'{0}\'", next2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 17
+testRunner.Then(string.Format("Then step \'{0}\'", next3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("test 2 passed")]
+        public virtual void Test2Passed()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("test 2 passed", ((string[])(null)));
+#line 26
+this.ScenarioSetup(scenarioInfo);
+#line 27
+testRunner.Given("test 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 28
+testRunner.When("Test 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 29
+testRunner.Then("Test 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("test 3 failed")]
         public virtual void Test3Failed()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("test 3 failed", ((string[])(null)));
-#line 26
+#line 32
 this.ScenarioSetup(scenarioInfo);
-#line 27
+#line 33
 testRunner.Given("Given step \'1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 28
+#line 34
 testRunner.Then("Test failed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 29
+#line 35
 testRunner.When("When step \'2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
@@ -85,13 +130,13 @@ testRunner.When("When step \'2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(
         public virtual void Test4Error()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("test 4 error", ((string[])(null)));
-#line 31
+#line 37
 this.ScenarioSetup(scenarioInfo);
-#line 32
+#line 38
 testRunner.Given("Given step \'1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 33
+#line 39
 testRunner.Then("Test error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 34
+#line 40
 testRunner.When("When step \'2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
@@ -104,12 +149,31 @@ testRunner.When("When step \'2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("test 5 warning", new string[] {
                         "Warning"});
-#line 37
+#line 43
 this.ScenarioSetup(scenarioInfo);
-#line 38
+#line 44
 testRunner.Given("Given step \'1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 39
+#line 45
 testRunner.Then("Test warning", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("test Ignored")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
+        public virtual void TestIgnored()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("test Ignored", new string[] {
+                        "Ignore"});
+#line 49
+this.ScenarioSetup(scenarioInfo);
+#line 50
+testRunner.Given("Given step \'<next1>\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 51
+testRunner.When("When step \'<next2>\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 52
+testRunner.Then("Then step \'<next3>\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

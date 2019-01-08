@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using TechTalk.SpecFlow;
 
@@ -8,6 +9,19 @@ namespace SimpleListenerSpecFlow
     [Binding]
     public class StepDefinitions
     {
+        private readonly ScenarioContext _scenarioContext;
+
+        public StepDefinitions(ScenarioContext scenarioContext)
+        {
+            this._scenarioContext = scenarioContext;
+        }
+
+        [StepArgumentTransformation]
+        public Dictionary<string, string> transformtable(Table table)
+        {
+            return new Dictionary<string, string>();
+        }
+
         [BeforeScenario]
         [AfterScenario]
         public void BeforeAfterHook()
@@ -61,15 +75,26 @@ namespace SimpleListenerSpecFlow
         //[Obsolete("you should use another step instead")]
         public void Warning()
         {
-            //try
-            //{
             Thread.Sleep(1000);
             Assert.Warn("use another step instead");
-            //}
-            //catch (Exception error)
-            //{
-            //    Console.WriteLine($"test case with warning message {error.Message}");
-            //}
+        }
+
+        [Then(@"Step with table")]
+        public void ThenStepWithTable(Table table)
+        {
+            Assert.True(true);
+        }
+
+        [Then(@"Step with transformed")]
+        public void ThenStepWithTransformed(Dictionary<string, string> table)
+        {
+            Assert.True(true);
+        }
+
+        [Then(@"Step with multiline text")]
+        public void ThenStepWithMultilineText(string multilineText)
+        {
+            Assert.True(true);
         }
 
     }

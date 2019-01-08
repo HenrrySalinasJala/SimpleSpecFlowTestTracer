@@ -18,7 +18,8 @@ namespace SimpleTracer.SpecFlowPlugin
     {
         public void Initialize(RuntimePluginEvents runtimePluginEvents, RuntimePluginParameters runtimePluginParameters)
         {
-            runtimePluginEvents.CustomizeTestThreadDependencies += (sender, args) => { args.ObjectContainer.RegisterTypeAs<SimpleTracer, ITestTracer>(); };
+            runtimePluginEvents.CustomizeTestThreadDependencies += (sender, args) => 
+            { args.ObjectContainer.RegisterTypeAs<SimpleTracer, ITestTracer>(); };
         }
 
         

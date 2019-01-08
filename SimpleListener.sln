@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTracer.SpecflowPlugin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTracer.SpecFlowPlugin.Test", "SimpleTracer.SpecFlowPlugin.Test\SimpleTracer.SpecFlowPlugin.Test.csproj", "{F49F8405-808D-455B-B13A-8912465EC3BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleExecutionEngine.SpecFlowPlugin", "SimpleExecutionEngine.SpecFlowPlugin\SimpleExecutionEngine.SpecFlowPlugin.csproj", "{69708989-EC5B-4D22-8770-32F3033D21AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{F49F8405-808D-455B-B13A-8912465EC3BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F49F8405-808D-455B-B13A-8912465EC3BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F49F8405-808D-455B-B13A-8912465EC3BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69708989-EC5B-4D22-8770-32F3033D21AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69708989-EC5B-4D22-8770-32F3033D21AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69708989-EC5B-4D22-8770-32F3033D21AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69708989-EC5B-4D22-8770-32F3033D21AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
